@@ -29,35 +29,17 @@ Finally, **in-place algorithms** sort without needing extra arrays, making them 
 
 Now, let's explore some popular sorting and searching algorithms and see how they stack up:
 
-
-
-| S.no | Algorithm                | Best Case Time Complexity | Average Case Time Complexity | Worst Case Time Complexity | Space Complexity (Worst) | Stability  | Inplace |
-| ---- | ------------------------ | ------------------------- | ---------------------------- | -------------------------- | ------------------------ | ---------- | ------- |
-| 1    | **Bubble Sort**          | O(n)                      | O(n^2)                       | O(n^2)                     | O(1)                     | Stable     | Yes     |
-| 2    | **Insertion Sort**       | O(n)                      | O(n^2)                       | O(n^2)                     | O(1)                     | Stable     | Yes     |
-| 3    | **Selection Sort**       | O(n^2)                    | O(n^2)                       | O(n^2)                     | O(1)                     | Not Stable | Yes     |
-| 4    | **Heap Sort**            | O(n log n)                | O(n log n)                   | O(n log n)                 | O(1)                     | Not Stable | Yes     |
-| 5    | **Quick Sort**           | O(n log n)                | O(n log n)                   | O(n^2)                     | O(log n)                 | Not Stable | Yes     |
-| 6    | **Merge Sort**           | O(n log n)                | O(n log n)                   | O(n log n)                 | O(n)                     | Stable     | No      |
-| 7    | **Radix Sort**           | O(nk)                     | O(nk)                        | O(nk)                      | O(n+k)                   | Stable     | Yes     |
-| 8    | **Shell Sort**           | O(n log^2 n)              | O(n^2)                       | O(n^2)                     | O(1)                     | Not Stable | Yes     |
-| 9    | **Comb Sort**            | O(n^2)                    | O(n^2/log n)                 | O(n^2)                     | O(1)                     | Not Stable | Yes     |
-| 10   | **Counting Sort**        | O(n+k)                    | O(n+k)                       | O(n+k)                     | O(k)                     | Stable     | No      |
-| 11   | **Bucket Sort**          | O(n^2)                    | O(n+k)                       | O(n^2)                     | O(n+k)                   | Stable     | No      |
-| 12   | **Cocktail Shaker Sort** | O(n)                      | O(n^2)                       | O(n^2)                     | O(1)                     | Stable     | Yes     |
-| 13   | **Gnome Sort**           | O(n^2)                    | O(n^2)                       | O(n^2)                     | O(1)                     | Stable     | Yes     |
-| 14   | **Stooge Sort**          | O(n^(log 3 / log 1.5))    | O(n^(log 3 / log 1.5))       | O(n^(log 3 / log 1.5))     | O(log n)                 | Not Stable | Yes     |
-| 15   | **Odd-Even Sort**        | O(n^2)                    | O(n^2)                       | O(n^2)                     | O(1)                     | Stable     | Yes     |
-| 16   | **Pigeonhole Sort**      | O(n + Range)              | O(n + Range)                 | O(n + Range)               | O(Range)                 | Stable     | No      |
-| 17   | **Cycle Sort**           | O(n^2)                    | O(n^2)                       | O(n^2)                     | O(1)                     | Not Stable | Yes     |
-| 18   | **Pancake Sort**         | O(n^2)                    | O(n^2)                       | O(n^2)                     | O(1)                     | Stable     | Yes     |
-| 19   | **Bead Sort**            | O(n^2)                    | O(n^2)                       | O(n^2)                     | O(1)                     | Stable     | No      |
-| 20   | **Sleep Sort**           | O(n + maximum element)    | O(n + maximum element)       | O(n + maximum element)     | O(1)                     | Stable     | No      |
-
 {" "}
-<figcaption>
-  Table shows popular algorithms with their time and space complexities.
-</figcaption>
+<figure>
+  <img
+    src="/images/all-algorithms-tc.png"
+    alt=""
+    style={{ display: "inline-block" }}
+  />
+  <figcaption>
+    Table showing all the algorithms with their time complexity, space complexity, stability, etc.
+  </figcaption>
+</figure>
 
 ---
 

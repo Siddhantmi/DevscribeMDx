@@ -12,10 +12,10 @@ const siteConfig: SiteConfig = {
     { label: "About", href: "/about" },
   ],
   social: {
-    github: "https://github.com/alexcarpenter",
-    twitter: "https://twitter.com/hyrbid_alex",
-    linkedin: "https://www.linkedin.com/in/imalexcarpenter/",
-    instagram: "https://www.instagram.com/alexcarp/",
+    github: "https://github.com/",
+    twitter: "https://twitter.com/",
+    linkedin: "https://www.linkedin.com/",
+    instagram: "https://www.instagram.com/",
   },
 };
 export default siteConfig;

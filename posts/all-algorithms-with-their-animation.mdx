@@ -1,0 +1,484 @@
+---
+title: "Time complexities of all algorithms with their visiualisations"
+description: "In this article, we will look at all the algorithms with their nice visiualisations, time and space complexities, stability and is inplace or not."
+date: "2024-02-13"
+tags: ["algorithms", "dsa"]
+---
+
+Today, we're diving into the fascinating world of algorithms. It's like organizing your messy closet, but with code!
+
+Before we jump in, there are some key factors to consider when choosing the right algorithm:
+- Time complexity
+- Space complexity, 
+- Stability, 
+- In-place nature.
+
+ These tell us how fast, efficient, and flexible the algorithm is.
+
+Think of **time complexity** like the effort it takes to sort. In the best case (already sorted data!), it might be a breeze. But in the worst case (totally jumbled mess!), it could take a while. We use terms like O(n), O(n log n), and O(n^2) to represent these different scenarios.
+
+**Space complexity** is like the extra storage you need while sorting. Some algorithms might need extra space, while others are more memory-efficient.
+
+**Stability** means the algorithm preserves the order of elements with the same value. Imagine sorting books by author, then title. A stable algorithm would keep books by the same author together, even if their titles come alphabetically later.
+
+Finally, **in-place algorithms** sort without needing extra arrays, making them memory-friendly.
+
+---
+
+## All the algorithms at one place
+
+Now, let's explore some popular sorting and searching algorithms and see how they stack up:
+
+
+
+| S.no | Algorithm                | Best Case Time Complexity | Average Case Time Complexity | Worst Case Time Complexity | Space Complexity (Worst) | Stability  | Inplace |
+| ---- | ------------------------ | ------------------------- | ---------------------------- | -------------------------- | ------------------------ | ---------- | ------- |
+| 1    | **Bubble Sort**          | O(n)                      | O(n^2)                       | O(n^2)                     | O(1)                     | Stable     | Yes     |
+| 2    | **Insertion Sort**       | O(n)                      | O(n^2)                       | O(n^2)                     | O(1)                     | Stable     | Yes     |
+| 3    | **Selection Sort**       | O(n^2)                    | O(n^2)                       | O(n^2)                     | O(1)                     | Not Stable | Yes     |
+| 4    | **Heap Sort**            | O(n log n)                | O(n log n)                   | O(n log n)                 | O(1)                     | Not Stable | Yes     |
+| 5    | **Quick Sort**           | O(n log n)                | O(n log n)                   | O(n^2)                     | O(log n)                 | Not Stable | Yes     |
+| 6    | **Merge Sort**           | O(n log n)                | O(n log n)                   | O(n log n)                 | O(n)                     | Stable     | No      |
+| 7    | **Radix Sort**           | O(nk)                     | O(nk)                        | O(nk)                      | O(n+k)                   | Stable     | Yes     |
+| 8    | **Shell Sort**           | O(n log^2 n)              | O(n^2)                       | O(n^2)                     | O(1)                     | Not Stable | Yes     |
+| 9    | **Comb Sort**            | O(n^2)                    | O(n^2/log n)                 | O(n^2)                     | O(1)                     | Not Stable | Yes     |
+| 10   | **Counting Sort**        | O(n+k)                    | O(n+k)                       | O(n+k)                     | O(k)                     | Stable     | No      |
+| 11   | **Bucket Sort**          | O(n^2)                    | O(n+k)                       | O(n^2)                     | O(n+k)                   | Stable     | No      |
+| 12   | **Cocktail Shaker Sort** | O(n)                      | O(n^2)                       | O(n^2)                     | O(1)                     | Stable     | Yes     |
+| 13   | **Gnome Sort**           | O(n^2)                    | O(n^2)                       | O(n^2)                     | O(1)                     | Stable     | Yes     |
+| 14   | **Stooge Sort**          | O(n^(log 3 / log 1.5))    | O(n^(log 3 / log 1.5))       | O(n^(log 3 / log 1.5))     | O(log n)                 | Not Stable | Yes     |
+| 15   | **Odd-Even Sort**        | O(n^2)                    | O(n^2)                       | O(n^2)                     | O(1)                     | Stable     | Yes     |
+| 16   | **Pigeonhole Sort**      | O(n + Range)              | O(n + Range)                 | O(n + Range)               | O(Range)                 | Stable     | No      |
+| 17   | **Cycle Sort**           | O(n^2)                    | O(n^2)                       | O(n^2)                     | O(1)                     | Not Stable | Yes     |
+| 18   | **Pancake Sort**         | O(n^2)                    | O(n^2)                       | O(n^2)                     | O(1)                     | Stable     | Yes     |
+| 19   | **Bead Sort**            | O(n^2)                    | O(n^2)                       | O(n^2)                     | O(1)                     | Stable     | No      |
+| 20   | **Sleep Sort**           | O(n + maximum element)    | O(n + maximum element)       | O(n + maximum element)     | O(1)                     | Stable     | No      |
+
+{" "}
+<figcaption>
+  Table shows popular algorithms with their time and space complexities.
+</figcaption>
+
+---
+
+Now lets Look at each of these algorithms one by one in detail.
+
+## 1. Bubble Sort
+
+**Imagine you have a bucket of marbles mixed up by size.** You want to organize them from smallest to biggest. Instead of comparing every single marble at once, you can use Bubble Sort like this:
+
+1. **Pick two marbles at random.**
+2. **Compare them:** If the bigger one is on top, swap them! It's like gently bubbling the smaller marbles to the top of the bucket.
+3. **Repeat steps 1 and 2** until you've gone through the entire bucket.
+
+By the end, all the small marbles will be "bubbled" to the top, just like in the algorithm.
+
+**Official Definition:**
+
+Bubble Sort is a **comparison-based sorting algorithm** in which, repeatedly, the largest element is identified and moved to the end of the array. This process is repeated until no further swaps are needed, indicating the array is sorted.
+
+{" "}
+<figure style={{ textAlign: "center" }}>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/c/c8/Bubble-sort-example-300px.gif"
+    alt=""
+    style={{ display: "inline-block" }}
+  />
+  <figcaption>
+    Bubble Sort - Image credit
+    [wikipedia](https://en.wikipedia.org/wiki/Bubble_sort)
+  </figcaption>
+</figure>
+
+
+**Key points:**
+
+- **Time complexity:** O(n^2) in the worst and average cases, O(n) in the best case (already sorted array).
+- **Space complexity:** O(1) (in-place algorithm).
+- **Stability:** Stable (preserves the relative order of equal elements).
+- **Not recommended for large datasets** due to its quadratic time complexity.
+
+**Benefits:**
+
+- Simple and easy to understand and implement.
+- In-place, meaning it doesn't require additional memory for sorting.
+- Stable, so elements with the same value maintain their relative order.
+
+**Drawbacks:**
+
+- Poor performance for large datasets due to its O(n^2) time complexity.
+- Numerous comparisons and swaps can be inefficient for large arrays.
+
+**Alternatives for large datasets:**
+
+- Quick Sort: O(n log n) average time complexity.
+- Merge Sort: O(n log n) time complexity and stable.
+
+
+## 2. Insertion Sort
+
+Imagine you have a deck of cards in your hand, initially unsorted. You want to organize them from lowest to highest (or vice versa). Instead of comparing every card at once, Insertion Sort lets you build a sorted "sub-deck" one card at a time:
+
+1. **Start with the first card as your sorted sub-deck.**
+2. **Take the next card.**
+3. **Compare it to each card in the sorted sub-deck, starting from the end.**
+4. **Find the first card smaller than the new card (or the beginning if all are larger).**
+5. **"Shift" all larger cards one position to the right, creating a gap.**
+6. **Insert the new card into the gap, maintaining the sorted order.**
+7. **Repeat steps 2-6** until all cards are inserted into the growing sorted sub-deck.
+
+Think of it like adding cards to your hand while keeping them sorted. Each new card finds its "correct" place based on comparison, building the sorted pile card by card.
+
+**Official Definition:**
+
+Insertion Sort is a **simple sorting algorithm** that iteratively builds a sorted sub-array by inserting elements at their correct positions. It operates in a similar way to manually sorting cards in your hand.
+
+{" "}
+<figure style={{ textAlign: "center" }}>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Insertion-sort-example-300px.gif"
+    alt=""
+    style={{ display: "inline-block" }}
+  />
+  <figcaption>
+    Insertion Sort - Image credit
+    [wikipedia](https://en.wikipedia.org/wiki/Insertion_sort)
+  </figcaption>
+</figure>
+
+**Key Points:**
+
+- **Time complexity:** O(n^2) worst case, O(n) best case (already sorted array), O(n) average case for partially sorted arrays.
+- **Space complexity:** O(1) (in-place algorithm).
+- **Stability:** Stable (preserves the relative order of equal elements).
+- **Suitable for small or partially sorted datasets** due to its linear time complexity in better cases.
+
+**Benefits:**
+
+- Simple to understand and implement.
+- Efficient for small or partially sorted datasets.
+- Stable, maintaining the order of equal elements.
+- In-place, requiring no additional memory.
+
+**Drawbacks:**
+
+- Quadratic time complexity in the worst case can be slow for large datasets.
+- May perform more comparisons than other algorithms in the worst case.
+
+**Alternatives for large datasets:**
+
+- Quick Sort: O(n log n) average time complexity.
+- Merge Sort: O(n log n) time complexity and stable.
+
+
+## 3. Selection Sort
+
+Imagine you have a messy drawer full of clothes, mixed up by type and size. Instead of comparing every item at once, Selection Sort lets you find the "best fit" piece one by one:
+
+1. **Start with an empty "sorted pile."**
+2. **Look through the entire drawer.** Find the item that **best fits** your criteria (e.g., smallest shirt, biggest sock).
+3. **Take that item and put it in the "sorted pile."** It's like selecting the right ingredient for your salad, one by one.
+4. **Repeat steps 2-3, but now ignore the items already in the "sorted pile."** You're looking for the best fit among the remaining items.
+5. **Continue until the entire drawer is empty, and your "sorted pile" contains everything.** All the clothes are now organized!
+
+Think of it like playing a "best fit" game, where you gradually build a sorted collection by choosing the most suitable item each time.
+
+**Official Definition:**
+
+Selection Sort is a **comparison-based sorting algorithm** that repeatedly finds the minimum (or maximum) element in the unsorted portion of the array and swaps it with the first element. This process continues until the entire array is sorted.
+
+{" "}
+<figure style={{ textAlign: "center" }}>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/9/94/Selection-Sort-Animation.gif"
+    alt=""
+    style={{ display: "inline-block" }}
+  />
+  <figcaption>
+    Selection Sort - Image credit
+    [wikipedia](https://en.wikipedia.org/wiki/Selection_sort)
+  </figcaption>
+</figure>
+
+**Key Points:**
+
+- **Time complexity:** O(n^2) in the worst and average cases, due to many comparisons and swaps.
+- **Space complexity:** O(1) (in-place algorithm).
+- **Not stable** (may change the order of equal elements).
+- **Simple to implement** but not the most efficient for large datasets.
+
+**Benefits:**
+
+- Easy to understand and implement.
+- In-place, using minimal additional memory.
+- Can be useful for small datasets or when simplicity is preferred.
+
+**Drawbacks:**
+
+- Quadratic time complexity makes it slow for large datasets.
+- Many comparisons and swaps can be inefficient.
+
+**Alternatives for large datasets:**
+
+- Quick Sort: O(n log n) average time complexity.
+- Merge Sort: O(n log n) time complexity and stable.
+
+## 4. Heap Sort
+
+Imagine you have a pile of sandcastles at the beach, all different sizes. You want to organize them from smallest to biggest (or vice versa). Instead of directly comparing each sandcastle, Heap Sort lets you build a special structure called a "heap" to find the "best" one:
+
+1. **Start with an empty "heap," which acts like a fancy sandcastle mountain.**
+2. **Take one sandcastle at a time.**
+3. **Compare it to the "king" of the heap (the biggest/smallest, depending on your sorting preference).**
+4. **If the new sandcastle is "bigger" (or "smaller"), dethrone the king and put the new one at the top.**
+5. **Push the old king down the heap, comparing it to its "children" castles and swapping if needed.**
+6. **Repeat steps 2-5 until all sandcastles are in the heap.**
+7. **Now, the "king" is always the true biggest/smallest!** Remove it from the heap and voila, you have your first sorted sandcastle.
+8. **Repeat steps 7-6 to remove and sort the remaining castles.**
+
+Think of it like a game where you build a sorted mountain of sandcastles by comparing and swapping them based on their "kingship."
+
+**Official Definition:**
+
+Heap Sort is a **comparison-based sorting algorithm** that builds a **max-heap** (or **min-heap**) and repeatedly removes the root element (largest/smallest), restoring the heap property after each removal. This process continues until the array is empty, leaving all elements sorted.
+
+{" "}
+<figure style={{ textAlign: "center" }}>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/1/1b/Sorting_heapsort_anim.gif"
+    alt=""
+    style={{ display: "inline-block" }}
+  />
+  <figcaption>
+    Heap Sort - Image credit
+    [wikipedia](https://en.wikipedia.org/wiki/Heapsort)
+  </figcaption>
+</figure>
+
+
+**Key Points:**
+
+- **Time complexity:** O(n log n) in the average and worst cases.
+- **Space complexity:** O(1) (in-place algorithm).
+- **Not stable** (may change the order of equal elements).
+- **Efficient for most datasets** due to its logarithmic time complexity.
+
+**Benefits:**
+
+- Faster than Selection Sort or Bubble Sort for most datasets.
+- In-place, requiring minimal additional memory.
+- Can be used for priority queues with efficient insertion and deletion operations.
+
+**Drawbacks:**
+
+- Not as simple to understand or implement as some other sorting algorithms.
+- Not stable, meaning it may change the order of equal elements.
+
+**Alternatives for specific use cases:**
+
+- Insertion Sort: Better for small or partially sorted datasets.
+- Merge Sort: Stable alternative with O(n log n) time complexity.
+
+## 5. Quick Sort : Dive Deeper into the Speedy Sorter
+
+Imagine you have a messy room full of toys scattered everywhere. You want to organize them by type, but comparing every toy at once would be overwhelming! Quick Sort offers a clever solution: divide and conquer!
+
+**Think of it like this:**
+
+1. **Pick a toy ("pivot") at random.** This is your temporary sorting reference.
+2. **Partition the other toys into two piles:**
+    - **Left pile:** Toys "smaller" than the pivot (figuratively or literally, depending on your sorting logic).
+    - **Right pile:** Toys "bigger" than the pivot.
+3. **Recursively sort** the left and right piles independently, treating them as smaller rooms. Just like organizing smaller sections of your messy room first.
+4. **Combine the sorted piles:**
+    - Put the sorted left pile first.
+    - Place the pivot toy in its correct position (between the two sorted piles).
+    - Add the sorted right pile at the end.
+
+By repeatedly dividing and sorting sub-piles, Quick Sort efficiently conquers the sorting challenge!
+
+**Technical Talk:**
+
+Quick Sort is a powerful **divide-and-conquer sorting algorithm** with an average time complexity of O(n log n), making it significantly faster than algorithms like Bubble Sort or Insertion Sort. However, its worst-case scenario can reach O(n^2), similar to those algorithms. It also requires additional space (O(log n)) compared to in-place algorithms.
+
+{" "}
+<figure style={{ textAlign: "center" }}>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Sorting_quicksort_anim.gif"
+    alt=""
+    style={{ display: "inline-block" }}
+  />
+  <figcaption>
+    Quick Sort - Image credit
+    [wikipedia](https://en.wikipedia.org/wiki/Quicksort)
+  </figcaption>
+</figure>
+
+**Key points:**
+
+- **Average time complexity:** O(n log n)
+- **Worst-case time complexity:** O(n^2)
+- **Space complexity:** O(log n)
+- **Not stable:** May change the order of equal elements.
+
+**Benefits:**
+
+- Highly efficient for most datasets due to its average time complexity.
+- Relatively simple to understand and implement compared to other efficient algorithms.
+
+**Drawbacks:**
+
+- Worst-case scenario can be slow.
+- Requires additional space for recursion.
+- Not stable, which might be important for specific use cases.
+
+**Alternatives:**
+
+- Merge Sort: Stable alternative with O(n log n) time complexity.
+- Insertion Sort: Better for small or partially sorted datasets.
+
+**Remember:** Choosing the right sorting algorithm depends on your specific data and needs. Consider factors like dataset size, desired time complexity, and stability requirements when making your decision.
+
+## 6. Merge Sort: The Elegant Team Player of Sorting
+
+Imagine you have a pile of books jumbled up on a table. You want to organize them alphabetically, but tackling the whole mess at once feels daunting. Merge Sort offers a collaborative approach: divide, conquer, and merge!
+
+**Here's how it works:**
+
+1. **Divide the messy pile in half.** Think of it like splitting your reading list into two smaller stacks.
+2. **Recursively repeat step 1** on each half, until you have individual books (the simplest sorted "sub-lists").
+3. **Now comes the merging magic:**
+    - Take the **first elements** from each sub-list.
+    - Compare them and **add the "smaller"** book to a new sorted "merged" list.
+    - Repeat this comparison and addition, **one element at a time**, from each sub-list (like taking turns picking the next alphabetically correct book).
+    - Once one sub-list is empty, simply add the remaining elements from the other in order.
+4. **Repeat step 3** until you have one **final, beautifully sorted list** of all your books!
+
+**Think of it like this:**
+
+- You break down the sorting problem into smaller, more manageable sub-problems (individual books).
+- Then, you cleverly combine these sorted sub-lists, ensuring proper order at each step, resulting in the final sorted list.
+
+**Technical Talk:**
+
+Merge Sort belongs to the **divide-and-conquer** algorithm family, boasting an impressive average and worst-case time complexity of O(n log n). This means the sorting time grows proportionally to the logarithm of the number of elements, making it efficient for large datasets. Additionally, it requires extra space (O(n)) for temporary storage during merging, and it's a **stable** algorithm (preserves the order of equal elements).
+
+{" "}
+<figure style={{ textAlign: "center" }}>
+  <img
+    src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Merge-sort-example-300px.gif"
+    alt=""
+    style={{ display: "inline-block" }}
+  />
+  <figcaption>
+    Merge Sort - Image credit
+    [wikipedia](https://en.wikipedia.org/wiki/Merge_sort)
+  </figcaption>
+</figure>
+
+**Key Points:**
+
+- **Time complexity:** O(n log n) (average and worst-case)
+- **Space complexity:** O(n)
+- **Stable:** Maintains the order of equal elements.
+
+**Benefits:**
+
+- Excellent efficiency for large datasets due to its O(n log n) time complexity.
+- Stable, which is important for maintaining specific orderings.
+- Relatively simple to understand and implement compared to other efficient algorithms.
+
+**Drawbacks:**
+
+- Requires additional space for temporary storage.
+- May be slightly slower than Quick Sort in practice (average case).
+
+**Alternatives:**
+
+- Quick Sort: Slightly faster in average case, but not stable.
+- Insertion Sort: Better for small or partially sorted datasets.
+
+**Choosing the Right Algorithm:**
+
+Consider your specific needs:
+
+- If stability is crucial, Merge Sort is ideal.
+- For large datasets, both Merge Sort and Quick Sort are excellent choices.
+- For smaller datasets, Insertion Sort might be sufficient.
+
+**Beyond the Basics:**
+
+- Merge Sort excels in external sorting, where data is too large to fit in memory at once.
+- Its divide-and-conquer approach makes it a popular choice for parallel computing.
+
+## 7. Radix Sort: Sorting by Digit with Bucket Power
+
+Imagine you have a messy drawer full of socks, all mixed up by color and size. Instead of comparing each sock directly, Radix Sort cleverly sorts them digit by digit, like a patient organizer tackling one color shade at a time.
+
+**Think of it like this:**
+
+1. **Start with the least significant digit** (e.g., the shade for socks).
+2. **Create buckets for each possible value** of that digit (e.g., 10 buckets for shades from 0 to 9).
+3. **"Distribute" the socks into their corresponding buckets** based on their least significant digit.
+4. **Empty each bucket one by one, adding the socks back to the main pile** in the order they came out. Now, socks with the same least significant digit are grouped together.
+5. **Repeat steps 1-4 for the next most significant digit** (e.g., the size for socks). This refines the groupings further.
+6. **Continue iterating through digits** until you reach the most significant one (e.g., the category like "ankle" or "crew").
+
+By the end, your socks are perfectly organized, color by color, size by size, thanks to the "digitized" sorting approach!
+
+**Technical Talk:**
+
+Radix Sort is a non-comparison-based algorithm, meaning it avoids direct comparisons between elements. This efficiency is reflected in its average and worst-case time complexity of O(nk), where n is the number of elements and k is the number of digits (fixed-length keys). However, its space complexity can be O(n + k), requiring additional buckets for each digit pass.
+
+**Key Points:**
+
+- **Time complexity:** O(nk) (average and worst-case)
+- **Space complexity:** O(n + k)
+- **Stable:** Maintains the order of equal elements within each digit pass.
+
+**Benefits:**
+
+- Highly efficient for sorting integers or strings with fixed-length keys due to its linear time complexity.
+- Simple to understand and implement, especially for large datasets.
+- Stable, preserving the order of equal elements within each digit pass.
+
+**Drawbacks:**
+
+- Requires additional space for buckets.
+- Not as efficient for variable-length keys or complex data types.
+
+**Alternatives:**
+
+- Merge Sort: Generally faster for large datasets with larger key sizes.
+- Quick Sort: Efficient for general-purpose sorting, but not stable.
+
+**Choosing the Right Algorithm:**
+
+Consider your specific needs:
+
+- If your data has fixed-length keys and efficiency is a priority, Radix Sort is a great choice.
+- For larger datasets with complex keys, Merge Sort might be more suitable.
+
+**Beyond the Basics:**
+
+- Radix Sort can be adapted to work with variable-length keys by padding shorter keys with leading zeros.
+- Its efficient nature makes it popular for real-world applications like counting votes or sorting financial data.
+
+---
+
+**The Sorting Showdown: Choosing Your Champion**
+
+So, you've embarked on a journey through the fascinating world of sorting algorithms! We've explored the strategic comparisons of Bubble Sort, the intuitive shifts of Insertion Sort, the efficient partitioning of Quick Sort, and the elegant merging magic of Merge Sort. Even Radix Sort, with its digit-by-digit organization, showcased the diverse approaches to achieving that satisfyingly sorted outcome.
+
+Remember, **there's no "one-size-fits-all" solution** when it comes to sorting. The best algorithm depends on your specific **data** (size, type, key length), **needs** (performance, stability), and **constraints** (memory).
+
+**Consider these key factors:**
+
+- **Dataset size:** For small datasets, Insertion Sort might be efficient. For larger ones, Quick Sort or Merge Sort excel.
+- **Key length and type:** Radix Sort shines for fixed-length keys, while Merge Sort handles variable-length keys well.
+- **Stability:** If preserving the order of equal elements is crucial, Merge Sort or Insertion Sort are your champions.
+- **Performance:** Quick Sort and Merge Sort boast impressive average-case time complexity, while Radix Sort excels for specific data types.
+
+By understanding these trade-offs and the strengths of each algorithm, you can confidently choose the sorting warrior that best suits your digital battle!
+
+**Remember, the quest for efficiency never ends!** Keep exploring, experiment with different algorithms, and find the perfect "sort" for your next coding adventure.

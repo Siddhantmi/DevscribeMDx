@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-mdx-blog-theme",
+  "name": "Devscribe",
   "private": true,
   "scripts": {
     "dev": "next dev",

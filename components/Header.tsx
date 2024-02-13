@@ -4,6 +4,7 @@ import siteConfig from "@/data/siteConfig";
 import Link from "next/link";
 import { cx } from "@/lib/utils";
 
+
 export const Header: React.FC = () => {
   const { pathname } = useRouter();
   return (
@@ -30,7 +31,9 @@ export const Header: React.FC = () => {
           {siteConfig.nav.map((item, index) => {
             const isActive = item.href === pathname;
             return (
+              
               <li key={index}>
+                 
                 <Link
                   href={item.href}
                   aria-current={isActive ? "page" : undefined}

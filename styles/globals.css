@@ -8,15 +8,6 @@ body,
   height: 100%;
 }
 
-/**
- * Code block styles
- * MIT License
- * Copyright (c) 2018 Sarah Drasner
- * Sarah Drasner's[@sdras] Night Owl
- * Ported by Sara vieria [@SaraVieira]
- * Added by Souvik Mandal [@SimpleIndian]
- */
-
 code[class*="language-"],
 pre[class*="language-"] {
   color: #d6deeb;

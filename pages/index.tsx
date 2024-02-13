@@ -14,7 +14,7 @@ const Home: NextPage<HomeProps> = ({ posts }) => {
   return (
     <>
       <Page
-        title="Next.js MDX Blog Theme"
+        title=" Home"
         description={
           <>
             <p>

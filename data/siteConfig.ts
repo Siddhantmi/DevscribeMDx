@@ -12,9 +12,9 @@ const siteConfig: SiteConfig = {
     { label: "About", href: "/about" },
   ],
   social: {
-    github: "https://github.com/",
-    twitter: "https://twitter.com/",
-    linkedin: "https://www.linkedin.com/",
+    github: "https://youtube.com/",
+    twitter: "https://twitter.com/DevScribeHQ",
+    linkedin: "https://www.linkedin.com/company/devscribe/",
     instagram: "https://www.instagram.com/",
   },
 };

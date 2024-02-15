@@ -19,4 +19,8 @@ export type MDXFrontMatter = {
   description?: string;
   date: string;
   tags?: Array<string>;
+  author: string;
+  authorImage : string;
+  authorProfile: string;
+  socialMedia : string;
 };

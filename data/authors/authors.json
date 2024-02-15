@@ -1,0 +1,28 @@
+{
+    "authors": [
+      {
+        "name": "Siddhant Mishra",
+        "profile": "Frontend web developer | Backend developer",
+        "socialMedia": {
+          "twitter": "https://twitter.com/your_twitter_handle",
+          "instagram": "https://www.instagram.com/your_instagram_handle",
+          "linkedin": "https://www.linkedin.com/in/your_linkedin_profile",
+          "website": "https://www.yourwebsite.com"
+        },
+        "image": "/images/authors/siddhantmishra.jpg"
+      },
+      {
+        "name": "Another Author",
+        "profile": "Another Profile",
+        "socialMedia": {
+          "twitter": "https://twitter.com/another_twitter_handle",
+          "instagram": "https://www.instagram.com/another_instagram_handle",
+          "linkedin": "https://www.linkedin.com/in/another_linkedin_profile",
+          "website": "https://www.anotherwebsite.com"
+        },
+        "image": "/images/authors/anotherauthor.jpg"
+      }
+     
+    ]
+  }
+  

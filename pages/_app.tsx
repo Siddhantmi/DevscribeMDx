@@ -17,7 +17,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       >
         Skip to main content
       </a>
-      <div className="flex flex-col max-w-3xl mx-auto min-h-full px-4">
+      <div className="flex flex-col max-w-4xl mx-auto min-h-full px-4">
         <Header />
         <main id="main">
           <Component {...pageProps} />

@@ -56,6 +56,19 @@ export const Page: React.FC<PageProps> = ({
             gtag('config', 'G-JE5E5VE5JY');
           `}
         </Script>
+
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-JE5E5VE5JY"
+        />
+        <Script strategy="lazyOnload">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-JE5E5VE5JY');
+          `}
+        </Script>
       </Head>
       <header
         className={cx(

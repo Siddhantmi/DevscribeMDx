@@ -8,7 +8,9 @@ const siteConfig: SiteConfig = {
   siteThumbnail: "/logo.png",
   nav: [
     { label: "Home", href: "/" },
-    { label: "All Posts", href: "/posts" },
+    { label: "Posts", href: "/posts" },
+    
+    { label: "Tags", href: "/tags" },
     { label: "About", href: "/about" },
   ],
   social: {

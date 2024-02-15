@@ -21,7 +21,7 @@ export const Page: React.FC<PageProps> = ({
   thumbnail,
   children,
 }) => {
-  const GTM_ID = 'GTM-T3B873Q5';
+
   const metaTitle = onlyText(title);
   const metaDescription = description
     ? onlyText(description)
@@ -43,26 +43,19 @@ export const Page: React.FC<PageProps> = ({
         />
         <link rel="icon" href="/logo.png" />
 
-        <Script id="google-tag-manager" strategy="afterInteractive">
-        {`
-        (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-        'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-        })(window,document,'script','dataLayer','${GTM_ID}');
-        `}
-      </Script>
-      
-      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-FT7QFYKVW4"></Script>
-      
-      <Script id="gtag-script" >
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-FT7QFYKVW4');
-        `}
-      </Script>
+   {/* Use next/script for loading external scripts */}
+   <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-JE5E5VE5JY"
+        />
+        <Script>
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-JE5E5VE5JY');
+          `}
+        </Script>
       </Head>
       <header
         className={cx(

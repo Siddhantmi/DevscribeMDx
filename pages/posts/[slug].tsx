@@ -11,6 +11,7 @@ import { components } from "@/components/MDX";
 import { Prose } from "@/components/Prose";
 import { cx } from "@/lib/utils";
 import remarkGfm from "remark-gfm";
+import UtterancesComments from "@/components/Comments";
 interface ContextProps extends ParsedUrlQuery {
   slug: string;
 }
@@ -29,60 +30,58 @@ const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
         <Prose>
           <MDXRemote {...mdx} components={components} />
 
+          {/* Author Information */}
+          {frontMatter.author && (
+            <div className="mt-6 border-t border-gray-200 dark:border-gray-700 pt-4 flex items-start">
+              {/* Author Image */}
+              {frontMatter.authorImage && (
+                <img
+                  src={frontMatter.authorImage}
+                  alt={`Image of ${frontMatter.author}`}
+                  className="rounded-full w-24 h-24 object-cover shadow-lg mr-6"
+                />
+              )}
 
-{/* Author Information */}
-{frontMatter.author && (
-  <div className="mt-6 border-t border-gray-200 dark:border-gray-700 pt-4 flex items-start">
-    {/* Author Image */}
-    {frontMatter.authorImage && (
-      <img
-        src={frontMatter.authorImage}
-        alt={`Image of ${frontMatter.author}`}
-        className="rounded-full w-24 h-24 object-cover shadow-lg mr-6"
-      />
-    )}
+              {/* Author Details */}
+              <div className="flex flex-col">
+                {/* Author Name */}
+                <p className="text-xl pt-2 font-semibold text-gray-800 dark:text-gray-200 -mb-4">
+                  {frontMatter.author}
+                </p>
 
-    {/* Author Details */}
-    <div className="flex flex-col">
-      {/* Author Name */}
-      <p className="text-xl pt-2 font-semibold text-gray-800 dark:text-gray-200 -mb-4">
-        {frontMatter.author}
-      </p>
-
-      {/* Author Profile */}
-      {frontMatter.authorProfile && (
-        <p className="text-gray-600 dark:text-gray-400 mb-1">
-          {frontMatter.authorProfile}
-        </p>
-      )}
-
-      {/* Social Media Links with Icons */}
-      {Array.isArray(frontMatter.socialMedia) &&
-        frontMatter.socialMedia.length > 0 && (
-          <div className="flex space-x-2">
-            {frontMatter.socialMedia.map((link) => (
-              <a
-                key={link.url}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-500 hover:underline flex items-center"
-              >
-                {link.icon && (
-                  <i className={`mr-1 ${link.icon}`} aria-hidden="true"></i>
+                {/* Author Profile */}
+                {frontMatter.authorProfile && (
+                  <p className="text-gray-600 dark:text-gray-400 mb-1">
+                    {frontMatter.authorProfile}
+                  </p>
                 )}
-                {link.name}
-              </a>
-            ))}
-          </div>
-        )}
-    </div>
-  </div>
-)}
 
-
-
-
+                {/* Social Media Links with Icons */}
+                {Array.isArray(frontMatter.socialMedia) &&
+                  frontMatter.socialMedia.length > 0 && (
+                    <div className="flex space-x-2">
+                      {frontMatter.socialMedia.map((link) => (
+                        <a
+                          key={link.url}
+                          href={link.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-blue-500 hover:underline flex items-center"
+                        >
+                          {link.icon && (
+                            <i
+                              className={`mr-1 ${link.icon}`}
+                              aria-hidden="true"
+                            ></i>
+                          )}
+                          {link.name}
+                        </a>
+                      ))}
+                    </div>
+                  )}
+              </div>
+            </div>
+          )}
         </Prose>
 
         {previous || next ? (
@@ -127,7 +126,10 @@ const Post: NextPage<PostProps> = ({ frontMatter, mdx, previous, next }) => {
             ) : null}
           </nav>
         ) : null}
+
+
       </Page>
+      <UtterancesComments />
     </>
   );
 };

